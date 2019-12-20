@@ -1,0 +1,17 @@
+This repo includes the following:
+1) backdoor.py - The file the target runs on their machine to open the backdoor connection.
+2) backdoor_listener.py - The file that runs on the local machine to complete the connection
+			  between backdoor.py on the target and our local machine.
+3) eav.py - The various attack vectors the backdoor_listener can execute.
+
+Capabilities:
+1) Navigate directories
+2) Download files from target
+3) Upload files to target
+4) Execute custom attacks on target
+
+This backdoor was designed to be scalable. As you come up with ideas for attacks that
+can be run on the target machine, all you need to do is add that function to the
+eav (Execute Attack Vectors) file, and add the source and executable for that attack
+to the vectors and vectors_source files respectively. Each eav works by simply uploading
+the executable, running the executable, removing the executable, and downloading the results.
